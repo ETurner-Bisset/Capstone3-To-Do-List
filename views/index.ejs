@@ -1,0 +1,22 @@
+<%- include('partials/header.ejs') %>
+
+<form action="/" method="POST">
+    <label for="task">Task:</label>
+    <input type="text" placeholder="Enter task..." name="task" id="name">
+    <input type="submit" value="Submit" id="btn1">
+</form>
+
+    <div class="task-container">
+
+        <% if (locals.ttasks) { %>
+            <% for (let i = 0; i < ttasks.length; i++) { %>
+                <div class="task">
+                    <input type="checkbox" name="check" id="check" value="check">
+                    <p class="text"><%= ttasks[i] %></p>
+                </div>
+            <% } %>
+            
+        <% } %>
+
+    </div>
+<%- include('partials/footer.ejs') %>

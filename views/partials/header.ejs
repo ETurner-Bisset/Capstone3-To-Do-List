@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <title>ToDoList</title>
+</head>
+<body>
+    <main class="container">
+    <h1>To Do List</h1>
+    <ul>
+        <li><a href="/"><i class="fa-solid fa-list-check"></i> Today</a></li>
+        <li><a href="/work"><i class="fa-regular fa-rectangle-list"></i> Work</a></li>
+    </ul>
+    <% let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]; %>
+    <% let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"] %>
+    <% let year = new Date().getFullYear(); %>
+    <% let month = months[new Date().getMonth() + 1]; %>
+    <% let date = new Date().getDate(); %>
+    <% let day = days[new Date().getDay() - 1]; %>
+    <h3><%= day %> <%= date %> <%= month %> <%= year %></h3>
+    
