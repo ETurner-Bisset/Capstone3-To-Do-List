@@ -3,20 +3,24 @@
 <form action="/" method="POST">
     <label for="task">Task:</label>
     <input type="text" placeholder="Enter task..." name="task" id="name">
-    <input type="submit" value="Submit" id="btn1">
+    <button type="submit" name="list" value="<%= listTitle %>">+</button>
 </form>
+
+    <div class="box" id="heading">
+      <h2> <%= listTitle %> </h2>
+    </div>
 
     <div class="task-container">
 
-        <% if (locals.ttasks) { %>
-            <% for (let i = 0; i < ttasks.length; i++) { %>
-                <div class="task">
-                    <input type="checkbox" name="check" id="check" value="check">
-                    <p class="text"><%= ttasks[i] %></p>
-                </div>
-            <% } %>
-            
-        <% } %>
+        <% ttasks.forEach(item => { %>
+            <form action="/delete" method="post">
+            <div class="item">
+              <input type="checkbox" name="checkbox" value="<%= item._id %>" onChange="this.form.submit()">
+              <p><%=  item.name  %></p>
+            </div>
+            <input type="hidden" name="listName" value="<%= listTitle %>">
+          </form>
+          <%}) %>
 
     </div>
 <%- include('partials/footer.ejs') %>

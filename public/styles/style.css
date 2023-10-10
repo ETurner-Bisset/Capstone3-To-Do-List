@@ -30,7 +30,7 @@ body {
     height: 100%;
     width: 100%;
     margin-bottom: 100px;
-    
+    margin-top: 50px;
 }
 
 h1 {
@@ -71,7 +71,7 @@ form {
     
 }
 
-.task {
+.item {
     width: 200px;
     height: 200px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
@@ -85,19 +85,19 @@ form {
     
 }
 
-.task input {
+.item input {
     margin-bottom: 40px;
 }
 
-input[type=submit] {
-    font-size: 20px;
+button {
+    font-size: 30px;
     background-color: var(--textcolor);
     color: var(--color-1);
     border-radius: 10px;
     cursor: pointer;
 }
 
-input[type=button]:hover {
+button:hover {
     transform: scale(1.2);
 }
 
@@ -105,11 +105,14 @@ footer {
     background-color: var(--textcolor);
     color: var(--color-1);
     height: 100px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 100px;
-    /* position: fixed; */
+    position: fixed;
+    bottom: 0;
+    left: 0;
 }
 
 input[type=checkbox]:checked + p {
