@@ -114,6 +114,6 @@ app.post("/delete", async (req, res) => {
     }
   });
 
-app.listen(port, () => {
+app.listen(process.env.PORT, () => {
     console.log(`Server running on port ${port}`);
 });
