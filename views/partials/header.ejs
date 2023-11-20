@@ -13,11 +13,5 @@
     <ul>
         <li><a href="/"><i class="fa-solid fa-list-check"></i> Today</a></li>
     </ul>
-    <% let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]; %>
-    <% let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"] %>
-    <% let year = new Date().getFullYear(); %>
-    <% let month = months[new Date().getMonth() + 1]; %>
-    <% let date = new Date().getDate(); %>
-    <% let day = days[new Date().getDay() - 1]; %>
-    <h3><%= day %> <%= date %> <%= month %> <%= year %></h3>
+    <h3><%= date %></h3>
     

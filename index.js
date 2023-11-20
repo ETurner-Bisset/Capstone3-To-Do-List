@@ -3,9 +3,12 @@ import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import _ from "lodash";
 
-
 const app = express();
 const port = 3000;
+
+const date = new Date();
+const options = {weekday: "long", year: "numeric", month: "short", day: "2-digit"};
+const getDate = date.toLocaleDateString("en-GB", options);
 
 app.set('view engine', 'ejs');
 
@@ -54,7 +57,8 @@ app.get("/", async (req, res) => {
     } else {
         res.render("index", {
             listTitle: "Today",
-            ttasks: foundItems
+            ttasks: foundItems,
+            date: getDate
         });
     }
 
@@ -114,6 +118,6 @@ app.post("/delete", async (req, res) => {
     }
   });
 
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT || port, () => {
     console.log(`Server running successfully`);
 });
