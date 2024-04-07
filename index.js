@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 import _ from "lodash";
 
 const app = express();
-const port = 3000;
+const port = 10000;
 
 const date = new Date();
 const options = {weekday: "long", year: "numeric", month: "short", day: "2-digit"};
